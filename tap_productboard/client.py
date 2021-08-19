@@ -29,7 +29,6 @@ class ProductboardStream(RESTStream):
 
     @property
     def http_headers(self) -> dict:
-        print("http_headers")
         headers = {}
         auth_token = self.config.get("auth_token")
 
@@ -48,13 +47,11 @@ class ProductboardStream(RESTStream):
         return params
 
     def get_next_page_token(self, response: requests.Response, previous_token: int) -> str:
-        print("get_next_page_token")
-        print("Previous Token:", previous_token)
 
         resp_json = response.json()
 
         previous_token = previous_token or 0
-        
+
         if resp_json['links']['next']:
             next_page_token = previous_token + 100
         else:
@@ -65,12 +62,8 @@ class ProductboardStream(RESTStream):
         """Parse the response and return an iterator of result rows."""
         # TODO: Parse response body and return a set of records.
         resp_json = response.json()
-        print(resp_json['links']['next'])
         for row in resp_json["data"]:
             # self.logger.info(row.keys())
             # self.logger.info(row.get("_expandable"))
             # self.logger.info(row["_links"])
             yield row
-
-
-# cli = TapProductboard.cli

@@ -13,7 +13,7 @@ plugins:
     config:
       start_date: '2010-01-01T00:00:00Z'
     settings:
-    - name: JWT Token
+    - name: auth_token
       kind: password
     - name: start_date
       value: '2010-01-01T00:00:00Z'

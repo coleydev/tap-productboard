@@ -19,13 +19,13 @@ STREAM_TYPES = [
 class TapProductboard(Tap):
     """Productboard tap class."""
     name = "tap-productboard"
-    print("TapProductboard")
     config_jsonschema = th.PropertiesList(
         th.Property("auth_token", th.StringType, required=True),
         th.Property("start_date", th.DateTimeType),
     ).to_dict()
-    print(config_jsonschema)
 
     def discover_streams(self) -> List[Stream]:
         """Return a list of discovered streams."""
         return [stream(tap=self) for stream in STREAM_TYPES]
+
+cli = TapProductboard.cli

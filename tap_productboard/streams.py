@@ -11,7 +11,6 @@ SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
 class FeatureStream(ProductboardStream):
     """Define custom stream."""
-    print("FeatureStream")
     name = "features"
     path = "/features"
     primary_keys = ["id"]
