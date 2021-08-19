@@ -5,8 +5,6 @@ plugins:
   extractors:
   - name: tap-productboard
     namespace: tap_productboard
-    # TODO: To test using Meltano, replace with absolute path
-    #       to the tap-productboard.sh script:
     executable: ./tap-productboard.sh
     capabilities:
     - state
@@ -15,9 +13,7 @@ plugins:
     config:
       start_date: '2010-01-01T00:00:00Z'
     settings:
-    # TODO: To configure using Meltano, declare settings and their types here:
-    - name: username
-    - name: password
+    - name: JWT Token
       kind: password
     - name: start_date
       value: '2010-01-01T00:00:00Z'

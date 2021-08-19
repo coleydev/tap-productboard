@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tap-productboard"
-version = "0.0.1"
+version = "0.1.0"
 description = "`tap-productboard` is a Singer tap for Productboard, built with the Meltano SDK for Singer Taps."
 authors = ["Liam Coley"]
 license = "Apache 2.0"
